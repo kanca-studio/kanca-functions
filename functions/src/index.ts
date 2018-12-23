@@ -1,7 +1,8 @@
-const functions = require("firebase-functions")
-const express = require("express")
-const bodyParser = require("body-parser")
 const cors = require("cors")({ origin: true })
+
+import * as functions from "firebase-functions"
+import * as express from "express"
+import * as bodyParser from "body-parser"
 
 const app = express()
 app.use(bodyParser.json())
