@@ -2,14 +2,14 @@ version: 1
 
 requests:
   login:
-    url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBZM6Jk7QWZ6W5Z2bIstBgBf7kn6FMmX-w
+    url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=<$ Env("KANCA_API_KEY") $>
     headers:
       Content-Type: application/json
     method: POST
     data:
       json:
-        email: test@mail.com
-        password: 123456
+        email: <$ Env("KANCA_EMAIL") $>
+        password: <$ Env("KANCA_PASSWORD") $>
         returnSecureToken: true
     # log: true
   get_index:
