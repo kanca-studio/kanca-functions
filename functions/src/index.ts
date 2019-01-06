@@ -8,6 +8,7 @@ import * as admin from "firebase-admin"
 admin.initializeApp()
 
 import community from "./community"
+import event from "./event"
 
 const app = express()
 app.use(bodyParser.json())
@@ -43,6 +44,7 @@ app.use(async (req, _res, next) => {
 })
 
 app.use(community)
+app.use(event)
 
 app.get("/", (_req, res) => {
   res.json({ message: "Kanca backend is up!" })
