@@ -10,10 +10,8 @@ npm install
 
 ### To run
 
-From project root folder, run
+Go to `functions` directory
 
 ```
-firebase serve --project kanca-app
+npm run serve
 ```
-
-Note: Make sure your firebase-tools npm package has been installed globally
