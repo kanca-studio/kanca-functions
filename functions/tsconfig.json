@@ -8,6 +8,6 @@
     "target": "es6"
   },
   "compileOnSave": true,
-  "include": ["src"],
+  "include": ["ts"],
   "files": ["index.d.ts"]
 }
