@@ -42,6 +42,13 @@ const communityQuerySnapshotHelper = async (querySnapshot: QuerySnapshot) => {
     const membersSnapshot = await Promise.all(membersSnapshotPromise)
     const members = membersSnapshot.map(memberSnapshot => memberSnapshot.data())
     community.members = members
+    const eventsRef: Array<DocumentReference> = community.events
+    const eventsSnapshotPromise: Promise<DocumentSnapshot>[] = eventsRef.map(
+      async eventSnapshot => await eventSnapshot.get()
+    )
+    const eventsSnapshot = await Promise.all(eventsSnapshotPromise)
+    const events = eventsSnapshot.map(eventSnapshot => eventSnapshot.data())
+    community.events = events
     return community
   })
   const communities = await Promise.all(communitiesPromise)
