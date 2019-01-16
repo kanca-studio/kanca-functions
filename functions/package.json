@@ -3,25 +3,29 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
-    "serve": "npm run build && firebase serve --only functions",
+    "serve": "npm run build && firebase serve --only functions --project kanca-app",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "mocha --reporter spec",
+    "login": "firebase login"
   },
-  "main": "lib/index.js",
+  "main": "js/index.js",
   "dependencies": {
     "@google-cloud/functions-emulator": "^1.0.0-beta.5",
-    "@google-cloud/firestore": "0.19.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.1.0"
+    "firebase-admin": "~6.0.0"
   },
   "devDependencies": {
+    "firebase-functions": "^2.1.0",
+    "firebase-functions-test": "^0.1.6",
+    "firebase-tools": "^6.2.2",
+    "mocha": "^5.2.0",
     "tslint": "~5.8.0",
-    "typescript": "~2.8.3"
+    "typescript": "^2.8.4"
   },
   "private": true
 }

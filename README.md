@@ -3,17 +3,18 @@
 ### To clone
 
 ```
-git clone https://github.com/kanca-studio/kanca-functions
-cd kanca-functions/functions
-npm install
+$ git clone https://github.com/kanca-studio/kanca-functions
+$ cd kanca-functions/functions
+$ npm install
 ```
 
 ### To run
 
-From project root folder, run
-
+Make sure you are on `functions` directory.
 ```
-firebase serve --project kanca-app
-```
+# If you are not logged in, run
+$ npm run login
 
-Note: Make sure your firebase-tools npm package has been installed globally
+# To serve locally run
+$ npm run serve
+```
